@@ -44,7 +44,7 @@ For more detailed information on configuration parameters, please view the MARS 
 The following tools are required on your machine to run a full simulation and visualization of this model:
 
 - A C# Interactive Development Environment (IDE), preferably [JetBrains Rider](https://www.jetbrains.com/rider/)
-- [.NET Core](https://dotnet.microsoft.com/en-us/download) 6.0 or higher
+- [.NET Core](https://dotnet.microsoft.com/en-us/download) 8.0 or higher
 - [Python](https://www.python.org/downloads/) 3.8 or higher
 
 To set up and run the simulation and visualization, please follow these steps:
