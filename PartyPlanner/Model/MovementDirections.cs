@@ -1,6 +1,6 @@
 using Mars.Interfaces.Environments;
 
-namespace GridBlueprint.Model;
+namespace PartyPlanner.Model;
 
 public abstract class MovementDirections
 {

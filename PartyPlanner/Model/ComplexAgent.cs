@@ -8,7 +8,7 @@ using Mars.Interfaces.Environments;
 using Mars.Interfaces.Layers;
 using Mars.Numerics;
 
-namespace GridBlueprint.Model;
+namespace PartyPlanner.Model;
 
 public class ComplexAgent : IAgent<GridLayer>, IPositionable
 {
@@ -187,8 +187,8 @@ public class ComplexAgent : IAgent<GridLayer>, IPositionable
     /// </summary>
     private void ExploreAgents()
     {
-        // Explore nearby other SimpleAgent instances
-        var agents = _layer.SimpleAgentEnvironment.Explore(Position, radius: AgentExploreRadius);
+        // Explore nearby other GuestAgent instances
+        var agents = _layer.GuestAgentEnvironment.Explore(Position, radius: AgentExploreRadius);
 
         foreach (var agent in agents)
         {

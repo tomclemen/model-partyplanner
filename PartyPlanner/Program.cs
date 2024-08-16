@@ -1,10 +1,10 @@
 using System;
 using System.IO;
-using GridBlueprint.Model;
 using Mars.Components.Starter;
 using Mars.Interfaces.Model;
+using PartyPlanner.Model;
 
-namespace GridBlueprint;
+namespace PartyPlanner;
 
 internal static class Program
 {
@@ -13,7 +13,7 @@ internal static class Program
         // Create a new model description and add model components to it
         var description = new ModelDescription();
         description.AddLayer<GridLayer>();
-        description.AddAgent<SimpleAgent, GridLayer>();
+        description.AddAgent<GuestAgent, GridLayer>();
         description.AddAgent<ComplexAgent, GridLayer>();
         description.AddAgent<HelperAgent, GridLayer>();
 

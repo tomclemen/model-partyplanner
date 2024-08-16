@@ -1,4 +1,4 @@
-namespace GridBlueprint.Model;
+namespace PartyPlanner.Model;
 
 public enum AgentState
 {

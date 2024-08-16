@@ -6,7 +6,7 @@ using Mars.Core.Data;
 using Mars.Interfaces.Data;
 using Mars.Interfaces.Layers;
 
-namespace GridBlueprint.Model;
+namespace PartyPlanner.Model;
 
 public class GridLayer : RasterLayer
 {
@@ -25,13 +25,13 @@ public class GridLayer : RasterLayer
     {
         var initLayer = base.InitLayer(layerInitData, registerAgentHandle, unregisterAgentHandle);
 
-        SimpleAgentEnvironment = new SpatialHashEnvironment<SimpleAgent>(Width, Height);
-        ComplexAgentEnvironment = new SpatialHashEnvironment<ComplexAgent>(Width, Height);
+        GuestAgentEnvironment = new SpatialHashEnvironment<GuestAgent>(Width, Height);
+        //ComplexAgentEnvironment = new SpatialHashEnvironment<ComplexAgent>(Width, Height);
 
         var agentManager = layerInitData.Container.Resolve<IAgentManager>();
 
-        SimpleAgents = agentManager.Spawn<SimpleAgent, GridLayer>().ToList();
-        ComplexAgents = agentManager.Spawn<ComplexAgent, GridLayer>().ToList();
+        GuestAgents = agentManager.Spawn<GuestAgent, GridLayer>().ToList();
+        //ComplexAgents = agentManager.Spawn<ComplexAgent, GridLayer>().ToList();
         HelperAgents = agentManager.Spawn<HelperAgent, GridLayer>().ToList();
 
         return initLayer;
@@ -54,9 +54,9 @@ public class GridLayer : RasterLayer
     #region Fields and Properties
 
     /// <summary>
-    ///     The environment of the SimpleAgent agents
+    ///     The environment of the GuestAgent agents
     /// </summary>
-    public SpatialHashEnvironment<SimpleAgent> SimpleAgentEnvironment { get; set; }
+    public SpatialHashEnvironment<GuestAgent> GuestAgentEnvironment { get; set; }
 
     /// <summary>
     ///     The environment of the ComplexAgent agents
@@ -64,9 +64,9 @@ public class GridLayer : RasterLayer
     public SpatialHashEnvironment<ComplexAgent> ComplexAgentEnvironment { get; set; }
 
     /// <summary>
-    ///     A collection that holds the SimpleAgent instances
+    ///     A collection that holds the GuestAgent instances
     /// </summary>
-    public List<SimpleAgent> SimpleAgents { get; private set; }
+    public List<GuestAgent> GuestAgents { get; private set; }
 
     /// <summary>
     ///     A collection that holds the ComplexAgent instances

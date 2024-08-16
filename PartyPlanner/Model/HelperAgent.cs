@@ -2,7 +2,7 @@ using System;
 using Mars.Interfaces.Agents;
 using Mars.Interfaces.Environments;
 
-namespace GridBlueprint.Model;
+namespace PartyPlanner.Model;
 
 public class HelperAgent : IAgent<GridLayer>, IPositionable
 {
